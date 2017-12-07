@@ -9,7 +9,7 @@ public class Ksort {
 
 	public static void main(String[] args){
 		int[] a = {2,3,9,8,7,6,1,4,5,10};
-		int k = 5;
+		int k = 10;
 		int num = getKminNum(a,k);
 		System.out.println(num);
 	}
@@ -35,8 +35,8 @@ public class Ksort {
 		}
 		a[start] = index;
 		if (start == k) return  a[k];
-		else if (k < start ) return getkNum(a, i,start,k); 
-		else return getkNum(a, start ,j, k );
+		else if (k < start ) return getkNum(a, i,start - 1 ,k); 
+		else return getkNum(a, start + 1 ,j, k );
 		
 	}
 	
