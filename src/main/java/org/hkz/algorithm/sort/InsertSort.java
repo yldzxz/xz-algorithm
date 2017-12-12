@@ -19,11 +19,10 @@ public class InsertSort {
 			sentry = a[j];
 			while ( j - 1 >= 0 && a[j - 1] > sentry ) {
 				j--;
+				a[j+1] = a[j];
 			}
-			while(k-1 >= 0 &&j < k){
-				a[k] = a[--k];
-			}
-			a[j] = sentry;
+			if ( i != j)
+				a[j] = sentry;
 			
 		}
 		return a;
