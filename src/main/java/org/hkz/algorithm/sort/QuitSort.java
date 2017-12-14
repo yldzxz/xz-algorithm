@@ -2,8 +2,8 @@ package org.hkz.algorithm.sort;
 
 public class QuitSort {
 	public static void main(String[] args) {
-		//int a[] = SortUtils.getArrays(10);
-		int a[] = { 16, 5, 3, 4, 2, 1 ,1, 2, 15, 1 };
+		int a[] = SortUtils.getArrays(10);
+		//int a[] = { 16, 5, 3, 4, 2, 1 ,1, 2, 15, 1 };
 		System.out.print("排序前的数据 : ");
 		SortUtils.print(a);
 		System.out.print("排序后的数据 : ");
@@ -34,13 +34,16 @@ public class QuitSort {
 	}
 	
 	public static  void quicksort(int[] a, int i, int j){
-		if (i >= j )
-			return;
-		int p = sort(a,i,j);
-		sort(a , i , p-1);
 		
-		sort(a , p+1 , j);
 		
+		int p;
+		if (i < j){
+			p = sort(a,i,j);
+			
+			quicksort(a , i , p-1);
+			
+			quicksort(a , p+1 , j);
+		}
 	}
 	
 	
